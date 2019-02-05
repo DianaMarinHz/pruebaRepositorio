@@ -1,0 +1,53 @@
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27) Hibernate: 
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)     SELECT
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         cli.cli_cliente,
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         cli.cli_apellidouno,
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         cli.cli_apellidodos,
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         cli.cli_nombreuno,
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         cli.cli_nombredos,
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         cli.cli_nombrecompleto,
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         cre.cre_numerocredito,
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         cre.puc_puntocredito,
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         cre.tpd_tipodoc,
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         cre.npd_secuencia,
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         cre.emp_empresa,
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         cre.cre_estado,
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         est.ecl_nombre          
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)     FROM
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         sac_cliente  cli            
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)     INNER JOIN
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         sac_credito cre                
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)             ON cli.cli_cliente = cre.cli_cliente            
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)     INNER JOIN
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         sac_estado est                
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)             ON est.ecl_estadocli = cre.cre_estado        
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)     INNER JOIN
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)         sac_tipoid tipodoc           
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)             ON cli.tpi_tipoid = tipodoc.tpi_tipoid       
+15:41:40,750 INFO  [stdout] (http-/0.0.0.0:8080-27)     INNER JOIN
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         sac_cuota cuo                
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)             ON cre.emp_empresa = cuo.emp_empresa               
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)             AND cre.puc_puntocredito = cuo.puc_puntocredito               
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)             AND cre.tpd_tipodoc = cuo.tpd_tipodoc               
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)             AND cre.npd_secuencia = cuo.npd_secuencia               
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)             AND cre.cre_numerocredito = cuo.cre_numerodocument          
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)     WHERE
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         cli.tpi_tipoid = ? 
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         AND                cli.cli_nroid = ? 
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         AND             cre.cre_estado = ?          
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)     GROUP BY
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         cli.cli_cliente,
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         cli.cli_apellidouno,
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         cli.cli_apellidodos,
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         cli.cli_nombreuno,
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         cli.cli_nombredos,
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         cli.cli_nombrecompleto,
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         cre.cre_numerocredito,
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         cre.puc_puntocredito,
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         cre.tpd_tipodoc,
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         cre.npd_secuencia,
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         cre.emp_empresa,
+15:41:40,751 INFO  [stdout] (http-/0.0.0.0:8080-27)         cre.cre_estado,
+15:41:40,752 INFO  [stdout] (http-/0.0.0.0:8080-27)         est.ecl_nombre          
+15:41:40,752 INFO  [stdout] (http-/0.0.0.0:8080-27)     ORDER BY
+15:41:40,752 INFO  [stdout] (http-/0.0.0.0:8080-27)         cre.cre_numerocredito ASC 
